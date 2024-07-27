@@ -63,6 +63,7 @@ export class AuthService {
         expiresIn: '7d',
         secret: process.env.jwtRefreshTokenKey,
       }),
+      expiresIn: new Date().setTime(new Date().getTime() + EXPIRE_TIME),
     };
   }
 }
