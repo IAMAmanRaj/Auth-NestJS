@@ -7,7 +7,7 @@ import { JwtService } from '@nestjs/jwt';
 const EXPIRE_TIME = 20 * 1000;
 
 @Injectable()
-export class AuthService {
+export class AuthService { 
   constructor(
     private userService: UserService,
     private jwtService: JwtService,
