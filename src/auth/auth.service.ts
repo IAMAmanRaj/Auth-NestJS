@@ -7,7 +7,7 @@ import { JwtService } from '@nestjs/jwt';
 const EXPIRE_TIME = 20 * 1000;
 
 @Injectable()
-export class AuthService { 
+export class AuthService {
   constructor(
     private userService: UserService,
     private jwtService: JwtService,
@@ -46,5 +46,23 @@ export class AuthService {
       return result;
     }
     throw new UnauthorizedException();
+  }
+
+  async refreshToken(user: any) {
+    const payload = {
+      username: user.username,
+      sub: user.sub,
+    };
+
+    return {
+      accessToken: await this.jwtService.signAsync(payload, {
+        expiresIn: '20s',
+        secret: process.env.jwtSecretKey,
+      }),
+      refreshToken: await this.jwtService.signAsync(payload, {
+        expiresIn: '7d',
+        secret: process.env.jwtRefreshTokenKey,
+      }),
+    };
   }
 }
