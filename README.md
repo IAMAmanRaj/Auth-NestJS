@@ -21,6 +21,9 @@
 </p>
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+  
+## See below illustration that explains the Auth Process 
+![nestjs-jwt-authentication](https://github.com/user-attachments/assets/bb350b9d-7a64-4b2b-9118-5b9a6f5f880d)
 
 ## Description
 
